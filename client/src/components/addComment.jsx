@@ -9,20 +9,26 @@ const AddComment = ({ setStreetArtObject, streetArtObject }) => {
     };
 
     const sendToBackend = () => {
-        fetch('http://localhost:4000/streetart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(
-                streetArtObject
-            ),
-        })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
+        if (streetArtObject.lat && streetArtObject.lng) {
+            fetch('http://localhost:4000/streetart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(
+                    streetArtObject
+                ),
+            })
+                .then(response => response.json())
+                .then(data => console.log('Success:', data))
+                .catch(error => console.error('Error:', error));
 
+        }
+        else {
+            alert('Your streetart is missing a position, a name or a description.');
+        }
     }
+
 
 
 

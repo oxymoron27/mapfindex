@@ -25,18 +25,7 @@ const AddComment = ({ setStreetArtObject, streetArtObject }) => {
     }
 
 
-    const getFromBackend = () => {
-        fetch('http://localhost:4000/streetart', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
 
-    }
 
 
 
@@ -61,7 +50,6 @@ const AddComment = ({ setStreetArtObject, streetArtObject }) => {
             <br></br>
             <button onClick={sendToBackend}>Save Location</button>
             <br></br>
-            <button onClick={getFromBackend}>(Test)Get it back!</button>
         </div>
 
     );

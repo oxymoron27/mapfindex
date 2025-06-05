@@ -1,0 +1,12 @@
+.h1 {
+    margin: 0;
+    font-size: 18px;
+    color: #3e2f2c;
+}
+
+.divHeader {
+    background-color: #d9a066;
+    padding: 15px;
+    border: 3px solid #5a4637;
+    box-shadow: 4px 4px 0px #5a4637;
+}

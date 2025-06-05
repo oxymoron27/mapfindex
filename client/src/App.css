@@ -1,0 +1,82 @@
+/* Dezenter Retro-Stil mit warmen Farbtönen */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #f4e1c1;
+  color: #5a4637;
+  text-align: left;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* 2 Teile für die Karte, 1 Teil für die Bedienung */
+  gap: 20px;
+  /* Abstand zwischen den Elementen */
+  padding: 20px;
+  height: calc(100vh - 80px);
+  /* Volle Höhe minus Header (angepasst nach Bedarf) */
+}
+
+.user-panel {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  background: #f4ca7b;
+  border: 3px solid #5a4637;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 3px 3px 0px #5a4637;
+}
+
+button:hover {
+  background: #e59400;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.menu {
+  width: 20%;
+  background: #f4e1c1;
+  padding: 15px;
+  border: 3px solid #5a4637;
+  box-shadow: 4px 4px 0px #5a4637;
+}
+
+.side-menu {
+  padding: 15px;
+  border: 7px solid #5a4637;
+  box-shadow: 4px 4px 0px #5a4637;
+  align-items: left;
+}
+
+.map-container {
+  width: 75%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5d3b3;
+  color: #3e2f2c;
+  border: 3px solid #5a4637;
+  box-shadow: 4px 4px 0px #5a4637;
+}
+
+footer p {
+  font-size: 12px;
+  color: #3e2f2c;
+}

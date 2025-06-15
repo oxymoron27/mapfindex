@@ -1,4 +1,6 @@
 const express = require("express");
+const { Client } = require("pg");
+
 const app = express();
 const cors = require('cors');
 const port = 4000;

@@ -1,3 +1,8 @@
+# Node.js (für Server)
+node_modules/
+server/.env
+
+
 # Logs
 logs
 *.log

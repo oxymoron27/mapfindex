@@ -1,0 +1,32 @@
+
+
+export const postLocationService = async (streetArtObject) => {
+    const response = await fetch('http://localhost:4000/streetart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(
+            streetArtObject
+        ),
+    });
+    if (!response.ok) {
+        throw new Error('Failed to save to backend');
+    }
+    return await response.json();
+}
+
+
+
+export const getLocationService = async () => {
+    const response = await fetch('http://localhost:4000/streetart', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    if (!response.ok) {
+        throw new Error('Failed to receive streetart locations')
+    }
+    return await response.json();
+}

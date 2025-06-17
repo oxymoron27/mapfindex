@@ -5,19 +5,41 @@ import SideMenu from './components/SideMenu';
 import { useState } from 'react';
 
 function App() {
-  const [clickedAddButton, setclickedAddButton] = useState(false);
-  const [position, setPosition] = useState('');
+  const [clickedAddButton, setClickedAddButton] = useState(false);
+  const [position, setPosition] = useState(null);
   const [streetArtObject, setStreetArtObject] = useState({});
+  const [reloadToggle, setReloadToggle] = useState(false);
 
   const handleAddButtonClick = () => {
-    setclickedAddButton(!clickedAddButton); // State auf true setzen
+    setClickedAddButton(!clickedAddButton);
+
+  };
+
+  const handleReloadToggle = () => {
+    setReloadToggle(!reloadToggle);
 
   };
   return (<div >
-    <Header />
-    <div class='grid-container'>
-      <MapComponent class="map-container" clickedAddButton={clickedAddButton} position={position} setPosition={setPosition} setStreetArtObject={setStreetArtObject} streetArtObject={streetArtObject} />
-      <SideMenu handleAddButtonClick={handleAddButtonClick} clickedAddButton={clickedAddButton} setStreetArtObject={setStreetArtObject} streetArtObject={streetArtObject} position={position} />
+    <Header className="header" />
+    <div className="map-wrapper">
+      <MapComponent
+        className="map-container"
+        clickedAddButton={clickedAddButton}
+        position={position}
+        setPosition={setPosition}
+        setStreetArtObject={setStreetArtObject}
+        streetArtObject={streetArtObject}
+        reloadToggle={reloadToggle}
+      />
+      <SideMenu
+        className="side-menu floating"
+        handleAddButtonClick={handleAddButtonClick}
+        clickedAddButton={clickedAddButton}
+        setStreetArtObject={setStreetArtObject}
+        streetArtObject={streetArtObject}
+        position={position}
+        handleReloadToggle={handleReloadToggle}
+      />
     </div>
   </div >)
 }

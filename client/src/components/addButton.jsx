@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 
 const AddButton = ({ handleAddButtonClick }) => {
 
-    return <button onClick={handleAddButtonClick}>Add Location</button>;
+    return <button className="button" onClick={handleAddButtonClick}>Add Location</button>;
 }
 
 

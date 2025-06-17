@@ -1,14 +1,14 @@
 
-import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from 'react-leaflet';
+import { useMapEvents, Marker, Popup } from 'react-leaflet';
 
 function LocationMarker({ position, setPosition, setStreetArtObject }) {
 
     useMapEvents({
         click: (e) => {
-            setPosition(e.latlng);
-
-            setStreetArtObject(prev => ({ ...prev, lat: position.lat, lng: position.lng }));
-
+            console.log('Klick auf Karte:', e.latlng);
+            const { lat, lng } = e.latlng;
+            setPosition(prev => ({ ...prev, lat: lat, lng: lng }));
+            setStreetArtObject(prev => ({ ...prev, lat: lat, lng: lng, titleLocation: '', titleDescription: '' }));
         }
 
     })
